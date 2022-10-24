@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "475268241473",
+    "project_id": "de-ichiraku",
+    "storage_bucket": "de-ichiraku.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475268241473:android:e487c62cc81f4db9538ec0",
+        "android_client_info": {
+          "package_name": "com.example.de_ichiraku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475268241473-sdkickpod6rgivn4asooge89i800fhq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnFA-ICVJHz-s56RWvCRqsBKmY2WnOh6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475268241473-sdkickpod6rgivn4asooge89i800fhq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
