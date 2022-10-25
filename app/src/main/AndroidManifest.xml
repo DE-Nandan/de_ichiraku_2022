@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.De_ichiraku">
         <activity
+            android:name=".dashboard"
+            android:exported="false" />
+        <activity
             android:name=".manage_otp"
             android:exported="false" />
         <activity
@@ -23,7 +26,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

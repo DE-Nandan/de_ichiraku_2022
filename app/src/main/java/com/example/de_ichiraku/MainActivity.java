@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,manage_otp.class);
                 intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ",""));
                 startActivity(intent);
