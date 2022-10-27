@@ -3,6 +3,7 @@ package com.example.de_ichiraku;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -79,7 +80,9 @@ public class dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                finish();
+                Intent intent = new Intent(dashboard.this, MainActivity.class);
+                startActivity(intent);
+                //finish();
             }
         });
     }

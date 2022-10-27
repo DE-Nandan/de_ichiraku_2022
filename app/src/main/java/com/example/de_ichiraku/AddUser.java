@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +23,7 @@ public class AddUser extends AppCompatActivity {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     String phn = user.getPhoneNumber().toString();
-    EditText usrnm;
+    EditText t3;
     Button b3;
 
     @Override
@@ -30,16 +31,22 @@ public class AddUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
 
-        usrnm = (EditText) findViewById(R.id.editTextTextPersonName);
-        String uname = usrnm.toString();
+
+
 
         b3 = (Button) findViewById(R.id.b3);
+        t3 = (EditText) findViewById(R.id.editTextnm);
 
-        Users a = new Users(uname,phn);
+        Log.d("namecheck ",t3.getText().toString());
+//        Users a = new Users(nm, "87878787878");
+//        System.out.println(nm);
 
        b3.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               String nm = t3.getText().toString();
+               Users a = new Users(nm, "87878787878");
+
                ref.child("Users").child(user.getUid()).setValue(a).addOnSuccessListener(new OnSuccessListener<Void>() {
                    @Override
                    public void onSuccess(Void unused) {
