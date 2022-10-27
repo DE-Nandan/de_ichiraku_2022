@@ -1,5 +1,6 @@
 package com.example.de_ichiraku;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,11 +8,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.de_ichiraku.Model.Users;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -37,7 +44,31 @@ public class dashboard extends AppCompatActivity {
         HashMap <String,Object> userDataMap = new HashMap<>();
         userDataMap.put("phone",phn);
         userDataMap.put("email",eml);
-        ref.child("Users").child(user.getUid()).setValue(userDataMap);
+        Users a = new Users("nandan","+918077746577","lolnation");
+        /*PASSING DATA USING MODEL CLASS TO FIREBASE*/
+        ref.child("Users").child(user.getUid()).setValue(a).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(dashboard.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        /* FOR RETRIEVING DATA*/
+        //        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                Users b = snapshot.child("Users").child(user.getUid()).getValue(Users.class);
+//                if(b.getPassword() == "lolnation")
+//                {
+//                    Toast.makeText(dashboard.this,"correct",Toast.LENGTH_SHORT).show();
+//                }
+//            }
+
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
         Log.d("dfsf ",phn);
         btn = (Button)findViewById(R.id.Logout);
