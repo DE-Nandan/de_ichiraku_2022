@@ -92,7 +92,7 @@ public class manage_otp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                          startActivity(new Intent(manage_otp.this,dashboard.class));
+                          startActivity(new Intent(manage_otp.this,AddUser.class));
                           finish();
                         } else {
                             Toast.makeText(getApplicationContext(),"Signin Error",Toast.LENGTH_LONG).show();

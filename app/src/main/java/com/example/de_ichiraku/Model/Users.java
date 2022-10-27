@@ -1,17 +1,16 @@
 package com.example.de_ichiraku.Model;
 
 public class Users {
-    private String name,phone,password;
+    private String name,phone;
 
     public Users()
     {
 
     }
 
-    public Users(String name, String phone, String password) {
+    public Users(String name, String phone) {
         this.name = name;
         this.phone = phone;
-        this.password = password;
     }
 
     public String getName() {
@@ -30,11 +29,5 @@ public class Users {
         this.phone = phone;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

@@ -40,18 +40,21 @@ public class dashboard extends AppCompatActivity {
 
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setText(phn);
-        String eml = "nandan@gmail.com";
-        HashMap <String,Object> userDataMap = new HashMap<>();
-        userDataMap.put("phone",phn);
-        userDataMap.put("email",eml);
-        Users a = new Users("nandan","+918077746577","lolnation");
+//        String eml = "nandan@gmail.com";
+//        HashMap <String,Object> userDataMap = new HashMap<>();
+//        userDataMap.put("phone",phn);
+//        userDataMap.put("email",eml);
+
+        /*CREATING AN OBJECT TO BE STORED IN DATABASE*/
+//      Users a = new Users("nandan","+918077746577");
+
         /*PASSING DATA USING MODEL CLASS TO FIREBASE*/
-        ref.child("Users").child(user.getUid()).setValue(a).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Toast.makeText(dashboard.this, "Added Successfully", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        ref.child("Users").child(user.getUid()).setValue(a).addOnSuccessListener(new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void unused) {
+//                Toast.makeText(dashboard.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         /* FOR RETRIEVING DATA*/
         //        ref.addListenerForSingleValueEvent(new ValueEventListener() {
