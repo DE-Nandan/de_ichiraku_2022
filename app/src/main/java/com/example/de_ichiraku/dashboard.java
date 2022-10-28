@@ -23,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+import io.paperdb.Paper;
+
 public class dashboard extends AppCompatActivity {
 
     Button btn;
@@ -79,6 +81,7 @@ public class dashboard extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Paper.book().destroy();
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(dashboard.this, MainActivity.class);
                 startActivity(intent);
