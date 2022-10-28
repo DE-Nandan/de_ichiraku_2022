@@ -1,6 +1,5 @@
 package com.example.de_ichiraku;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,29 +7,24 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.de_ichiraku.Model.Users;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
 
 import io.paperdb.Paper;
 
-public class dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
 
     Button btn;
+    Button btn2;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     String phn = user.getPhoneNumber().toString();
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+    EditText edt;
 
 
 
@@ -44,11 +38,36 @@ public class dashboard extends AppCompatActivity {
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setText(phn);
 //        String eml = "nandan@gmail.com";
+
+/*CHECKING ADDITION OF DATA TO ALREADY LOGGED IN USER*/
+
 //        HashMap <String,Object> userDataMap = new HashMap<>();
-//        userDataMap.put("phone",phn);
+
+
+
+
+
+//        btn2 = (Button)findViewById(R.id.add);
+//        btn2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                edt = (EditText)findViewById(R.id.editTextDash);
+//                String st = edt.getText().toString();
+//                userDataMap.put("newData",st);
+//                ref.child("Users").child(user.getUid()).updateChildren(userDataMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        Toast.makeText(dashboard.this, "newAdded", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//        });
+
 //        userDataMap.put("email",eml);
 
         /*CREATING AN OBJECT TO BE STORED IN DATABASE*/
+
+
 //      Users a = new Users("nandan","+918077746577");
 
         /*PASSING DATA USING MODEL CLASS TO FIREBASE*/
@@ -83,7 +102,7 @@ public class dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Paper.book().destroy();
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(dashboard.this, MainActivity.class);
+                Intent intent = new Intent(Dashboard.this, MainActivity.class);
                 startActivity(intent);
                 //finish();
             }

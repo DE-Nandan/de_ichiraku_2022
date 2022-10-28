@@ -16,12 +16,11 @@ import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class manage_otp extends AppCompatActivity {
+public class ManageOtp extends AppCompatActivity {
 
     EditText t2;
     Button b2;
@@ -92,7 +91,7 @@ public class manage_otp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                          startActivity(new Intent(manage_otp.this,AddUser.class));
+                          startActivity(new Intent(ManageOtp.this,AddUser.class));
                           finish();
                         } else {
                             Toast.makeText(getApplicationContext(),"Signin Error",Toast.LENGTH_LONG).show();

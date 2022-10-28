@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,manage_otp.class);
+                Intent intent = new Intent(MainActivity.this, ManageOtp.class);
                 intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ",""));
                 startActivity(intent);
             }
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             if(!TextUtils.isEmpty(UserPhoneKey) && !TextUtils.isEmpty(UserName))
             {
 
-                startActivity(new Intent(MainActivity.this,dashboard.class));
+                startActivity(new Intent(MainActivity.this, Dashboard.class));
             }
         }
 

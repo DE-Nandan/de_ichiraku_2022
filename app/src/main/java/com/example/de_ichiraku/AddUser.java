@@ -30,6 +30,9 @@ public class AddUser extends AppCompatActivity {
     EditText t3;
     Button b3;
     private CheckBox chkBoxRemMe;
+    TextView isAdmin;
+    TextView isUser;
+    String parentDbName = "Users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +44,8 @@ public class AddUser extends AppCompatActivity {
         chkBoxRemMe = (CheckBox)findViewById(R.id.checkBox);
         b3 = (Button) findViewById(R.id.b3);
         t3 = (EditText) findViewById(R.id.editTextnm);
-
+        isAdmin= (TextView)findViewById(R.id.isAdmin);
+        isUser= (TextView)findViewById(R.id.isUser);
         Paper.init(this);
 
         Log.d("namecheck ",t3.getText().toString());
@@ -60,18 +64,48 @@ public class AddUser extends AppCompatActivity {
                    Paper.book().write(Prevalent.UserName,nm);
                }
 
-               ref.child("Users").child(user.getUid()).setValue(a).addOnSuccessListener(new OnSuccessListener<Void>() {
+               ref.child(parentDbName).child(user.getUid()).setValue(a).addOnSuccessListener(new OnSuccessListener<Void>() {
                    @Override
                    public void onSuccess(Void unused) {
                        Toast.makeText(AddUser.this, "Added Successfully", Toast.LENGTH_SHORT).show();
                    }
                });
 
+               Intent intent;
+               if(parentDbName.equals("Users")) {
+                   intent = new Intent(AddUser.this, Dashboard.class);
+               }
+               else{
+                   intent = new Intent(AddUser.this, AdminCategory.class);
+               }
 
-               Intent intent = new Intent(AddUser.this,dashboard.class);
                startActivity(intent);
 
 
+           }
+       });
+
+       isUser.setVisibility(View.INVISIBLE);
+
+       isAdmin.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               b3.setText("Login Admin");
+               isAdmin.setVisibility(View.INVISIBLE);
+               isUser.setVisibility(View.VISIBLE);
+               chkBoxRemMe.setVisibility(View.INVISIBLE);
+               parentDbName = "Admins";
+           }
+       });
+
+       isUser.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               b3.setText("Login");
+               isAdmin.setVisibility(View.VISIBLE);
+               isUser.setVisibility(View.INVISIBLE);
+               chkBoxRemMe.setVisibility(View.VISIBLE);
+               parentDbName = "Users";
            }
        });
 

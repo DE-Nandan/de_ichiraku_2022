@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.os.Handler;
 
-public class splash extends AppCompatActivity {
+public class Splash extends AppCompatActivity {
 
     private static int SPLASH_SCREEN_TIME_OUT=1250;
     @Override
@@ -21,7 +21,7 @@ public class splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i=new Intent(splash.this,
+                Intent i=new Intent(Splash.this,
                         MainActivity.class);
                 //Intent is used to switch from one activity to another.
 
