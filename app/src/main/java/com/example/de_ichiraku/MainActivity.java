@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             if(!TextUtils.isEmpty(UserPhoneKey) && !TextUtils.isEmpty(UserName))
             {
 
-                startActivity(new Intent(MainActivity.this, Dashboard.class));
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
             }
         }
 

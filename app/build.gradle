@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         configurations.all {
-            resolutionStrategy { force 'androidx.core:core:1.6.0' }
+//            resolutionStrategy { force 'androidx.core:core:1.6.0' }
         }
         applicationId "com.example.de_ichiraku"
         minSdk 21
@@ -29,6 +29,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -41,6 +44,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:20.1.0'
     implementation 'io.github.pilgr:paperdb:2.7.2'
     implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
 /* For manipulating database basically to store data to a given class form database*/
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
