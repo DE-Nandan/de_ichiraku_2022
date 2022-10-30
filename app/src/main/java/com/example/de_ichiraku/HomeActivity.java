@@ -79,9 +79,9 @@ public class HomeActivity extends AppCompatActivity {
         TextView userNameTextView = headerView.findViewById(R.id.userProfileName);
         ImageView profileImageView = headerView.findViewById(R.id.profilePic);
         String UserName = Paper.book().read(Prevalent.UserName);
-        if(!TextUtils.isEmpty(UserName))
-        userNameTextView.setText(UserName);
-        else
+//        if(!TextUtils.isEmpty(UserName))
+//        userNameTextView.setText(UserName);
+//        else
             userNameTextView.setText(Prevalent.currentOnlineUsers.getName());
 
 

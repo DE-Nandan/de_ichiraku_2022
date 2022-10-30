@@ -22,7 +22,7 @@
         android:id="@+id/product_name_details"
         android:layout_width="188dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="316dp"
         android:text="Product Name"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -41,10 +41,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_name_details"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintVertical_bias="0.157" />
 
     <TextView
         android:id="@+id/product_price_details"
@@ -59,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_desc_details"
-        app:layout_constraintVertical_bias="0.198" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
         android:id="@+id/number_btn"
@@ -71,19 +71,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_price_details"
-        app:layout_constraintVertical_bias="0.222">
+        app:layout_constraintVertical_bias="0.11">
 
     </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatAddBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"
+    <Button
+        android:id="@+id/normalAddBtn"
+        android:layout_width="357dp"
+        android:layout_height="47dp"
+        android:text="Add to Cart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintVertical_bias="0.954" />
 </androidx.constraintlayout.widget.ConstraintLayout>

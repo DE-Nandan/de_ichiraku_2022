@@ -85,7 +85,7 @@ public class AddUser extends AppCompatActivity {
                });
 
                Prevalent.currentOnlineUsers = a;
-
+              // Toast.makeText(AddUser.this,Prevalent.currentOnlineUsers.getName(), Toast.LENGTH_SHORT).show();
 
                Intent intent;
                if(parentDbName.equals("Users")) {
