@@ -3,6 +3,7 @@ package com.example.de_ichiraku;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -82,6 +83,16 @@ public class Explore extends AppCompatActivity {
                        // Toast.makeText(Explore.this, model.getImage().toString(), Toast.LENGTH_LONG).show();
                      //   Log.d("imer",model.getImage());
                        Picasso.get().load(model.getImg()).into(holder.imageView);
+
+                       holder.itemView.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View v) {
+
+                               Intent intent = new Intent(Explore.this,ProductDetailsActivity.class);
+                               intent.putExtra("pid",model.getPid());
+                               startActivity(intent);
+                           }
+                       });
                     }
 
                     @NonNull

@@ -3,12 +3,17 @@
     package="com.example.de_ichiraku">
 
     <application
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:replace="android:theme"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.De_ichiraku">
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".Explore"
             android:exported="false" />
