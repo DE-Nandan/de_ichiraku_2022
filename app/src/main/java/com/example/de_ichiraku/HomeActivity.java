@@ -31,6 +31,7 @@ import io.paperdb.Paper;
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    //getting binding object
     private ActivityHomeBinding binding;
 
     @Override
@@ -38,7 +39,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Paper.init(this);
+
+        //1
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        //2
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarHome.toolbar);
@@ -54,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                  R.id.nav_gallery,R.id.nav_home)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
@@ -84,11 +88,11 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onStart()
-    {
-        super.onStart();
-    }
+//    @Override
+//    public void onStart()
+//    {
+//        super.onStart();
+//    }
 
 
 
