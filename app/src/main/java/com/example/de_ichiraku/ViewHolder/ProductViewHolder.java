@@ -25,7 +25,7 @@ public class ProductViewHolder extends androidx.recyclerview.widget.RecyclerView
         super(itemView);
 
 
-//        imageView = (ImageView)  imageView.findViewById(R.id.product_image);
+        imageView = (ImageView)  itemView.findViewById(R.id.product_image3);
         txtProductName = (TextView) itemView.findViewById(R.id.product_name);
         txtProductDescription = (TextView) itemView.findViewById(R.id.product_description);
         txtProductPrice = (TextView) itemView.findViewById(R.id.product_price);

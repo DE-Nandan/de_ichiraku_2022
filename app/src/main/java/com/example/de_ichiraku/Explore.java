@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -77,7 +79,9 @@ public class Explore extends AppCompatActivity {
                         holder.txtProductDescription.setText(model.getDescription());
                         holder.txtProductPrice.setText( model.getPrice());
 
-                      //  Picasso.get().load(model.getImage()).into(holder.imageView);
+                       // Toast.makeText(Explore.this, model.getImage().toString(), Toast.LENGTH_LONG).show();
+                     //   Log.d("imer",model.getImage());
+                       Picasso.get().load(model.getImg()).into(holder.imageView);
                     }
 
                     @NonNull

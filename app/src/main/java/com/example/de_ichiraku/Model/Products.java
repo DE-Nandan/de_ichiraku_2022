@@ -1,18 +1,17 @@
 package com.example.de_ichiraku.Model;
 
 public class Products {
-    private String pname,description,price,image,category,pid,date,time;
+    private String pname, description, price, img, category, pid, date, time;
 
-    public Products()
-    {
+    public Products() {
 
     }
 
-    public Products(String pname, String description, String price, String image, String category, String pid, String date, String time) {
+    public Products(String pname, String description, String price, String img, String category, String pid, String date, String time) {
         this.pname = pname;
         this.description = description;
         this.price = price;
-        this.image = image;
+        this.img = img;
         this.category = category;
         this.pid = pid;
         this.date = date;
@@ -43,12 +42,12 @@ public class Products {
         this.price = price;
     }
 
-    public String getImage() {
-        return image;
+    public String getImg() {
+        return img;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getCategory() {
