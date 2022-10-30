@@ -25,10 +25,12 @@ public class ProductViewHolder extends androidx.recyclerview.widget.RecyclerView
         super(itemView);
 
 
-        imageView = (ImageView)  imageView.findViewById(R.id.product_image);
+//        imageView = (ImageView)  imageView.findViewById(R.id.product_image);
         txtProductName = (TextView) itemView.findViewById(R.id.product_name);
         txtProductDescription = (TextView) itemView.findViewById(R.id.product_description);
         txtProductPrice = (TextView) itemView.findViewById(R.id.product_price);
+
+
     }
 
     public  void setItemClickListener(ItemClickListener listener)
@@ -39,6 +41,6 @@ public class ProductViewHolder extends androidx.recyclerview.widget.RecyclerView
 
     @Override
     public void onClick(View v) {
-//        listener.onClick(v, getAbsoluteAdapterPosition() ,false);
+     listener.onClick(v, getAdapterPosition(),false);
     }
 }

@@ -102,7 +102,9 @@ public class HomeActivity extends AppCompatActivity {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+//            super.onBackPressed();
+            finishAffinity();
+            finish();
         }
     }
 

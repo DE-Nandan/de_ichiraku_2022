@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.de_ichiraku.AddUser;
+import com.example.de_ichiraku.Explore;
 import com.example.de_ichiraku.ManageOtp;
 import com.example.de_ichiraku.R;
 import com.example.de_ichiraku.databinding.FragmentHomeBinding;
@@ -39,7 +40,7 @@ public class HomeFragment extends Fragment {
         binding.btntoact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                        Intent intent = new Intent(getActivity(), AddUser.class);
+                        Intent intent = new Intent(getActivity(), Explore.class);
                   startActivity(intent);
             }
         });
