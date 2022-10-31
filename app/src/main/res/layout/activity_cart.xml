@@ -10,15 +10,23 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_700">
+        android:background="@color/Crimson"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/total_price"
             android:layout_marginTop="10dp"
             android:text="Price : "
             android:textAlignment="center"
-            android:textSize="20dp">
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
 
@@ -28,16 +36,18 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="407dp"
         android:layout_height="341dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:id="@+id/cartList"
+        app:layout_constraintBottom_toTopOf="@+id/next_btn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
+        android:id="@+id/next_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:background="@color/teal_700"
+        android:background="@color/Crimson"
 
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
