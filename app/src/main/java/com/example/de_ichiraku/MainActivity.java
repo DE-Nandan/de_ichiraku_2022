@@ -3,6 +3,7 @@ package com.example.de_ichiraku;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     Button b1;
     FirebaseUser user;
     DatabaseReference ref;
+    private ProgressDialog loadingBar;
+
     //Users a;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         ccp = (CountryCodePicker) findViewById(R.id.ccp);
         ccp.registerCarrierNumberEditText(t1);
         b1 = (Button) findViewById(R.id.b1);
+        loadingBar = new ProgressDialog(this);
+        loadingBar.setTitle("Welcome!");
+        loadingBar.setMessage("Loading...");
+        loadingBar.setCanceledOnTouchOutside(false);
 
         Paper.init(this);
 
@@ -70,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         {
             if(!TextUtils.isEmpty(UserPhoneKey) && !TextUtils.isEmpty(UserName))
             {
+                loadingBar.show();
                 user = FirebaseAuth.getInstance().getCurrentUser();
 //                if(user != null)
 //                {

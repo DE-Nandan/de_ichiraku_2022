@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.De_ichiraku" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/Crimson</item>
+        <item name="colorPrimaryVariant">@color/Crimson</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+<!--        <item name="android:windowBackground">@color/black</item>-->
+<!--        <item name="android:textColorPrimary">@color/white</item>-->
     </style>
 
     <style name="Theme.De_ichiraku.NoActionBar">

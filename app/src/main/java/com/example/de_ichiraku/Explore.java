@@ -109,5 +109,12 @@ public class Explore extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(Explore.this,HomeActivity.class);
+        startActivity(intent);
+    }
 }
 
