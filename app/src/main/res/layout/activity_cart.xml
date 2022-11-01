@@ -34,9 +34,9 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="407dp"
-        android:layout_height="341dp"
         android:id="@+id/cartList"
+        android:layout_width="310dp"
+        android:layout_height="232dp"
         app:layout_constraintBottom_toTopOf="@+id/next_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
