@@ -33,6 +33,9 @@ public class CartActivity extends AppCompatActivity {
     private Button NextProcessBtn;
     private TextView txtTotalAmount;
 
+    private int overTotalPrice = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +47,34 @@ public class CartActivity extends AppCompatActivity {
           layoutManager = new LinearLayoutManager(this);
           recyclerView.setLayoutManager((layoutManager));
 
+
           NextProcessBtn = (Button) findViewById(R.id.next_btn);
+
           txtTotalAmount = (TextView) findViewById(R.id.total_price);
+
+          NextProcessBtn.setOnClickListener(new View.OnClickListener() {
+
+
+
+       //   txtTotalAmount.setText("Total Price =  "+ String.valueOf(overTotalPrice));
+
+
+
+              @Override
+              public void onClick(View v) {
+                  txtTotalAmount.setText("Total Price =  "+ String.valueOf(overTotalPrice));
+                  Intent intent = new Intent(CartActivity.this,CompleteFinalOrderActivity.class);
+                  intent.putExtra("Total Price",String.valueOf(overTotalPrice));
+                  startActivity(intent);
+                  finish();
+              }
+          });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
 
         //Toast.makeText(CartActivity.this, Prevalent.currentOnlineUsers.getPhone(), Toast.LENGTH_SHORT).show();
 
@@ -69,6 +93,11 @@ public class CartActivity extends AppCompatActivity {
                 holder.txtProductQunatity.setText(model.getQuantity());
                 holder.txtProductPrice.setText(model.getPrice());
                 holder.txtProductname.setText(model.getPname());
+
+                int oneTypeProductPrice = ((Integer.valueOf(model.getPrice())))*Integer.valueOf(model.getQuantity());
+
+                overTotalPrice = overTotalPrice+oneTypeProductPrice;
+
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -121,5 +150,7 @@ public class CartActivity extends AppCompatActivity {
         };
         recyclerView.setAdapter(adapter);
         adapter.startListening();
+
     }
+
 }
