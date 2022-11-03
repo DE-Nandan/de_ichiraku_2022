@@ -67,6 +67,7 @@
         android:layout_height="42dp"
         app:finalNumber="10"
         app:initialNumber="1"
+        app:backGroundColor="@color/Crimson"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
