@@ -12,24 +12,27 @@
         android:theme="@style/Theme.De_ichiraku"
         tools:replace="android:theme">
         <activity
-            android:name=".CartActivity"
+            android:name=".UserActivity.CompleteFinalOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductDetailsActivity"
+            android:name=".UserActivity.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".Explore"
+            android:name=".UserActivity.ProductDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".UserActivity.Explore"
+            android:exported="false" />
+        <activity
+            android:name=".UserActivity.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.De_ichiraku.NoActionBar" />
         <activity
-            android:name=".AdminCategory"
+            android:name=".AdminActivity.AdminCategory"
             android:exported="false" />
         <activity
-            android:name=".AdminAddProduct"
+            android:name=".AdminActivity.AdminAddProduct"
             android:exported="false" />
         <activity
             android:name=".AddUser"

@@ -5,18 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.de_ichiraku.AddUser;
-import com.example.de_ichiraku.Explore;
-import com.example.de_ichiraku.ManageOtp;
-import com.example.de_ichiraku.R;
+import com.example.de_ichiraku.UserActivity.Explore;
 import com.example.de_ichiraku.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {

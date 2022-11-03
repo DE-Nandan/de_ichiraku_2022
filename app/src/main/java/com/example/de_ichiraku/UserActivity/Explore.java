@@ -1,26 +1,23 @@
-package com.example.de_ichiraku;
+package com.example.de_ichiraku.UserActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.de_ichiraku.Model.Products;
+import com.example.de_ichiraku.R;
 import com.example.de_ichiraku.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -49,7 +46,7 @@ public class Explore extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Explore.this,CartActivity.class);
+                Intent intent = new Intent(Explore.this, CartActivity.class);
                startActivity(intent);
             }
         });
@@ -88,7 +85,7 @@ public class Explore extends AppCompatActivity {
                            @Override
                            public void onClick(View v) {
 
-                               Intent intent = new Intent(Explore.this,ProductDetailsActivity.class);
+                               Intent intent = new Intent(Explore.this, ProductDetailsActivity.class);
                                intent.putExtra("pid",model.getPid());
                                startActivity(intent);
                            }
@@ -113,7 +110,7 @@ public class Explore extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(Explore.this,HomeActivity.class);
+        Intent intent = new Intent(Explore.this, HomeActivity.class);
         startActivity(intent);
     }
 }

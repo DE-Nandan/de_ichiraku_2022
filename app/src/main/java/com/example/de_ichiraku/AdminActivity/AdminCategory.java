@@ -1,4 +1,4 @@
-package com.example.de_ichiraku;
+package com.example.de_ichiraku.AdminActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.de_ichiraku.R;
 
 public class AdminCategory extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class AdminCategory extends AppCompatActivity {
         noodles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategory.this,AdminAddProduct.class);
+                Intent intent = new Intent(AdminCategory.this, AdminAddProduct.class);
                 intent.putExtra("category","noodles");
                 startActivity(intent);
             }

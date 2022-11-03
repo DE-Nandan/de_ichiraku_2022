@@ -10,10 +10,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.de_ichiraku.Model.Users;
 import com.example.de_ichiraku.Prevalent.Prevalent;
+import com.example.de_ichiraku.UserActivity.HomeActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

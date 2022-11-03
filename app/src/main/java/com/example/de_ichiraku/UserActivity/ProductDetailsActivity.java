@@ -1,4 +1,4 @@
-package com.example.de_ichiraku;
+package com.example.de_ichiraku.UserActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +14,9 @@ import android.widget.Toast;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.de_ichiraku.Model.Products;
 import com.example.de_ichiraku.Prevalent.Prevalent;
+import com.example.de_ichiraku.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -101,7 +101,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                                             if(task.isSuccessful())
                                             {
                                                 Toast.makeText(ProductDetailsActivity.this, "Added to cart succ", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(ProductDetailsActivity.this,Explore.class);
+                                                Intent intent = new Intent(ProductDetailsActivity.this, Explore.class);
                                                  startActivity(intent);
                                             }
                                         }

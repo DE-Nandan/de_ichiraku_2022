@@ -1,4 +1,4 @@
-package com.example.de_ichiraku;
+package com.example.de_ichiraku.AdminActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.de_ichiraku.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -201,7 +202,7 @@ public class AdminAddProduct extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful())
                         {
-                            Intent intent = new Intent(AdminAddProduct.this,AdminCategory.class);
+                            Intent intent = new Intent(AdminAddProduct.this, AdminCategory.class);
                             startActivity(intent);
 
                             loadingbar.dismiss();
