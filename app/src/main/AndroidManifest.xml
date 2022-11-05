@@ -12,6 +12,9 @@
         android:theme="@style/Theme.De_ichiraku"
         tools:replace="android:theme">
         <activity
+            android:name=".AdminActivity.AdminNewOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserActivity.CompleteFinalOrderActivity"
             android:exported="false" />
         <activity

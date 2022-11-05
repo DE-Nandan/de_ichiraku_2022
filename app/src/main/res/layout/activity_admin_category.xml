@@ -10,7 +10,7 @@
         android:id="@+id/textView4"
         android:layout_width="179dp"
         android:layout_height="66dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="60dp"
         android:text="Choose To Add"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,24 +19,47 @@
 
     <ImageView
         android:id="@+id/noodles"
-        android:layout_width="251dp"
-        android:layout_height="225dp"
+        android:layout_width="156dp"
+        android:layout_height="137dp"
         app:layout_constraintBottom_toTopOf="@+id/beverages"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.493"
+        app:layout_constraintVertical_bias="0.506"
         app:srcCompat="@drawable/ndl2" />
 
     <ImageView
         android:id="@+id/beverages"
-        android:layout_width="273dp"
-        android:layout_height="230dp"
-        android:layout_marginBottom="72dp"
+        android:layout_width="158dp"
+        android:layout_height="134dp"
+        android:layout_marginBottom="188dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/beverage" />
+
+    <Button
+        android:id="@+id/check_order_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check New Order"
+        app:layout_constraintBottom_toTopOf="@+id/admin_logout_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beverages" />
+
+    <Button
+        android:id="@+id/admin_logout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_order_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

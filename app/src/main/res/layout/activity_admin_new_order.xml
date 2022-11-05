@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserActivity.CartActivity">
+    tools:context=".AdminActivity.AdminNewOrderActivity">
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/r2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Crimson"
@@ -20,9 +20,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/total_price"
+
             android:layout_marginTop="10dp"
-            android:text="Price : "
+            android:text="New Orders "
             android:textAlignment="center"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,39 +34,16 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cartList"
+        android:id="@+id/orders_list"
         android:layout_width="310dp"
         android:layout_height="232dp"
-        app:layout_constraintBottom_toTopOf="@+id/next_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/next_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:background="@color/Crimson"
-
-        android:text="Next"
+        android:layout_marginTop="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/msg1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ordr Placed Successfully.Waiting for Confirmation"
-        app:layout_constraintBottom_toTopOf="@+id/next_btn"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cartList"
-        android:visibility="gone"
-
-        />
+        app:layout_constraintTop_toBottomOf="@+id/r2"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
