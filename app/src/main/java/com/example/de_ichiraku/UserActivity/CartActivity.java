@@ -52,31 +52,31 @@ public class CartActivity extends AppCompatActivity {
 
           txtTotalAmount = (TextView) findViewById(R.id.total_price);
 
+
           NextProcessBtn.setOnClickListener(new View.OnClickListener() {
 
 
 
-       //   txtTotalAmount.setText("Total Price =  "+ String.valueOf(overTotalPrice));
+
 
 
 
               @Override
               public void onClick(View v) {
-                  txtTotalAmount.setText("Total Price =  "+ String.valueOf(overTotalPrice));
+
                   Intent intent = new Intent(CartActivity.this,CompleteFinalOrderActivity.class);
                   intent.putExtra("Total Price",String.valueOf(overTotalPrice));
                   startActivity(intent);
                   finish();
               }
           });
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-
-        //Toast.makeText(CartActivity.this, Prevalent.currentOnlineUsers.getPhone(), Toast.LENGTH_SHORT).show();
 
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
 
@@ -98,7 +98,7 @@ public class CartActivity extends AppCompatActivity {
 
                 overTotalPrice = overTotalPrice+oneTypeProductPrice;
 
-
+                txtTotalAmount.setText("Total Price =  "+ String.valueOf(overTotalPrice));
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -152,5 +152,6 @@ public class CartActivity extends AppCompatActivity {
         adapter.startListening();
 
     }
+
 
 }
