@@ -3,6 +3,7 @@ package com.example.de_ichiraku.ViewHolder;
 import android.app.Activity;
 import android.content.Context;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +16,8 @@ import com.example.de_ichiraku.R;
 public class AdminOrdersViewHolder extends androidx.recyclerview.widget.RecyclerView.ViewHolder implements View.OnClickListener
 {
     public TextView userName , userPhone , userTotalPrice , userDateTime , userShippingAddress;
-
+    public Button ShowOrderBtn;
+    public ItemClickListener listener;
 
 
     public AdminOrdersViewHolder(View itemView)
@@ -23,11 +25,12 @@ public class AdminOrdersViewHolder extends androidx.recyclerview.widget.Recycler
         super(itemView);
 
 
-        imageView = (ImageView)  itemView.findViewById(R.id.product_image3);
-        txtProductName = (TextView) itemView.findViewById(R.id.product_name);
-        txtProductDescription = (TextView) itemView.findViewById(R.id.product_description);
-        txtProductPrice = (TextView) itemView.findViewById(R.id.product_price);
-
+       userDateTime = itemView.findViewById(R.id.order_date_time);
+       userPhone = itemView.findViewById(R.id.order_phone_number);
+       userTotalPrice = itemView.findViewById(R.id.order_total_price);
+       userShippingAddress = itemView.findViewById(R.id.order_address_city);
+       ShowOrderBtn= itemView.findViewById(R.id.check_order_btn);
+       userName = itemView.findViewById(R.id.order_user_name);
 
     }
 

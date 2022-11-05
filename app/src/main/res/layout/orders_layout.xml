@@ -85,12 +85,15 @@
         </TextView>
 
         <Button
+            android:id="@+id/show_products_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/order_date_time"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
 
+            android:layout_marginTop="21dp"
+
+            android:layout_marginRight="20dp"
             android:backgroundTint="@color/black"
             android:text="Show this order products">
 

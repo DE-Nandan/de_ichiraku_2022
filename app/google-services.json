@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "475268241473",
+    "firebase_url": "https://de-ichiraku-default-rtdb.firebaseio.com",
     "project_id": "de-ichiraku",
     "storage_bucket": "de-ichiraku.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "475268241473-d2858phptkd1h1cd6mm28o4u9uj69feo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.de_ichiraku",
+            "certificate_hash": "5fd9f6dccda8370e22d6a719db26530df73056fc"
+          }
+        },
         {
           "client_id": "475268241473-sdkickpod6rgivn4asooge89i800fhq1.apps.googleusercontent.com",
           "client_type": 3
