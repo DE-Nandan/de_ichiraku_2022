@@ -16,6 +16,7 @@ import com.example.de_ichiraku.AdminActivity.AdminCategory;
 import com.example.de_ichiraku.Model.Users;
 import com.example.de_ichiraku.Prevalent.Prevalent;
 import com.example.de_ichiraku.UserActivity.HomeActivity;
+import com.example.de_ichiraku.UserActivity.PaymentActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,6 +32,7 @@ public class AddUser extends AppCompatActivity {
     String phn = user.getPhoneNumber().toString();
     EditText t3;
     Button b3;
+    Button btnP;
     private CheckBox chkBoxRemMe;
     TextView isAdmin;
     TextView isUser;
@@ -45,6 +47,7 @@ public class AddUser extends AppCompatActivity {
 
 
         chkBoxRemMe = (CheckBox)findViewById(R.id.checkBox);
+       // btnP = (Button)findViewById(R.id.btnP);
         b3 = (Button) findViewById(R.id.b3);
         t3 = (EditText) findViewById(R.id.editTextnm);
         isAdmin= (TextView)findViewById(R.id.isAdmin);
@@ -54,6 +57,14 @@ public class AddUser extends AppCompatActivity {
         Log.d("namecheck ",t3.getText().toString());
 //        Users a = new Users(nm, "87878787878");
 //        System.out.println(nm);
+
+//        btnP.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(AddUser.this, PaymentActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
 

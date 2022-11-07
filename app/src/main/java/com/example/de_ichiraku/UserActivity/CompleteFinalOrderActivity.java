@@ -69,6 +69,8 @@ public class CompleteFinalOrderActivity extends AppCompatActivity {
         else
         {
             conFirmOrder();
+            Intent intent = new Intent(CompleteFinalOrderActivity.this,PaymentActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -111,10 +113,10 @@ public class CompleteFinalOrderActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     Toast.makeText(CompleteFinalOrderActivity.this, "Items removed successfully", Toast.LENGTH_SHORT).show();
 
-                                    Intent intent = new Intent(CompleteFinalOrderActivity.this,Explore.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                    startActivity(intent);
-                                    finish();
+//                                    Intent intent = new Intent(CompleteFinalOrderActivity.this,Explore.class);
+//                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                    startActivity(intent);
+//                                    finish();
                                 }
                             });
                 }

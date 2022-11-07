@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.de_ichiraku">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application xmlns:tools="http://schemas.android.com/tools"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.De_ichiraku"
         tools:replace="android:theme">
+        <activity
+            android:name=".UserActivity.PaymentActivity"
+            android:exported="false" />
         <activity
             android:name=".AdminActivity.AdminUserProductsActivity"
             android:exported="false" />
@@ -58,6 +64,35 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_ZWkn5g3yeWSvxB" />
+
+        <activity
+            android:name="com.razorpay.CheckoutActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@style/CheckoutTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <data
+                    android:host="rzp.io"
+                    android:scheme="io.rzp" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.razorpay.RzpTokenReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="rzp.device_token.share" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
