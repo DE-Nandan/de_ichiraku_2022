@@ -85,14 +85,14 @@ public class CompleteFinalOrderActivity extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentTime.format(calendar.getTime());
 
-       final DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference()
-        .child("Orders")
-               .child(Prevalent.currentOnlineUsers.getPhone());
+        final DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference()
+                .child("Orders")
+                .child(Prevalent.currentOnlineUsers.getPhone());
 
 
         HashMap<String,Object> ordersMap = new HashMap<>();
 
-       ordersMap.put("totalAmount",totalAmount);
+        ordersMap.put("totalAmount",totalAmount);
         ordersMap.put("name",nameEditText.getText().toString());
         ordersMap.put("phone",phoneEditText.getText().toString());
         ordersMap.put("address",addressEditText.getText().toString());
@@ -106,19 +106,19 @@ public class CompleteFinalOrderActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())
                 {
-                    FirebaseDatabase.getInstance().getReference().child("Cart List")
-                            .child("User View").child(Prevalent.currentOnlineUsers.getPhone()).removeValue()
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    Toast.makeText(CompleteFinalOrderActivity.this, "Items removed successfully", Toast.LENGTH_SHORT).show();
-
-//                                    Intent intent = new Intent(CompleteFinalOrderActivity.this,Explore.class);
-//                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                                    startActivity(intent);
-//                                    finish();
-                                }
-                            });
+//                    FirebaseDatabase.getInstance().getReference().child("Cart List")
+//                            .child("User View").child(Prevalent.currentOnlineUsers.getPhone()).removeValue()
+//                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<Void> task) {
+//                                    Toast.makeText(CompleteFinalOrderActivity.this, "Items removed successfully", Toast.LENGTH_SHORT).show();
+//
+////                                    Intent intent = new Intent(CompleteFinalOrderActivity.this,Explore.class);
+////                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+////                                    startActivity(intent);
+////                                    finish();
+//                                }
+//                            });
                 }
             }
         });
