@@ -29,7 +29,7 @@ public class AdminOrdersViewHolder extends androidx.recyclerview.widget.Recycler
        userPhone = itemView.findViewById(R.id.order_phone_number);
        userTotalPrice = itemView.findViewById(R.id.order_total_price);
        userShippingAddress = itemView.findViewById(R.id.order_address_city);
-       ShowOrderBtn= itemView.findViewById(R.id.check_order_btn);
+       ShowOrderBtn= itemView.findViewById(R.id.show_products_btn);
        userName = itemView.findViewById(R.id.order_user_name);
 
     }
