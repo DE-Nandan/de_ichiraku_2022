@@ -163,7 +163,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 //                    productRating.setText(snapshot.child("rating").getValue().toString());
 //                    else
 //                        productRating.setText("0");
-
+                    productRating.setText(products.getRating());
                     productName.setText(products.getPname());
                     productDescription.setText(products.getDescription());
                     productPrice.setText(products.getPrice());
