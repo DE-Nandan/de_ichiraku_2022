@@ -80,6 +80,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
              @Override
              public void onClick(View v) {
                Intent intent = new Intent(ProductDetailsActivity.this,FeedbackActivity.class);
+               intent.putExtra("prodID",productID);
                startActivity(intent);
              }
          });
