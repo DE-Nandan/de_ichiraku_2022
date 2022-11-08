@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.example.de_ichiraku.Prevalent.Prevalent;
 import com.example.de_ichiraku.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +34,7 @@ public class FeedbackActivity extends AppCompatActivity {
     RatingBar rt;
     String prodID;
     int size;
+    Double prevR;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,25 +56,60 @@ public class FeedbackActivity extends AppCompatActivity {
         DatabaseReference userRef = prodRef.child("userR");
 
 
-       HashMap <String,Object> rat = new HashMap<>();
-       rat.put("rating","0");
-       rat.put("state","no");
+        HashMap <String,Object> rat = new HashMap<>();
+        rat.put("rating","0");
+        rat.put("state","no");
 
-       ratProdRef.updateChildren(rat);
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                {
+                    userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            size = (int)snapshot.getChildrenCount();
+                        }
 
-       userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot snapshot) {
-               size = (int) snapshot.getChildrenCount();
-           }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-           @Override
-           public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
 
-           }
-       });
+                }
+                else
+                {
+                    ratProdRef.updateChildren(rat).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    size = (int)snapshot.getChildrenCount();
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
+
+
+       // Toast.makeText(FeedbackActivity.this, size, Toast.LENGTH_SHORT).show();
 
 
 
@@ -88,32 +126,34 @@ public class FeedbackActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ratProdRef.addValueEventListener(new ValueEventListener() {
+
+                ratProdRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                      // String ratingState = snapshot.child("state").getValue().toString();
-                       // String userName = snapshot.child("name").getValue().toString();
+                        // String ratingState = snapshot.child("state").getValue().toString();
+                        // String userName = snapshot.child("name").getValue().toString();
                         //int usrR = (int) snapshot.child("rating").getValue();
 
-                        double usrR = Double.valueOf(String.valueOf(snapshot.child("rating").getValue()));
-                       // Toast.makeText(FeedbackActivity.this, usrR, Toast.LENGTH_SHORT).show();
-                              prodRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                  @Override
-                                  public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                      Double prevR = 0.0;
-                                      if(snapshot.child("rating").exists())
-                                      prevR = Double.valueOf(String.valueOf(snapshot.child("rating").getValue()));
+                        Double usrR = Double.valueOf(String.valueOf(snapshot.child("rating").getValue()));
+                        // Toast.makeText(FeedbackActivity.this, usrR, Toast.LENGTH_SHORT).show();
+                        prodRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                                      snapshot.getRef().child("rating").setValue((prevR+rt.getRating()-usrR)/size);
-                                     // snapshot.getRef().child("state").setValue("yes");
-                                  }
+                                    prevR = Double.valueOf(String.valueOf(snapshot.child("rating").getValue()));
+                                    Double ans = (prevR+rt.getRating()-usrR)/size;
+                                Toast.makeText(FeedbackActivity.this, prevR +" "+rt.getRating()+" "+usrR, Toast.LENGTH_SHORT).show();
 
-                                  @Override
-                                  public void onCancelled(@NonNull DatabaseError error) {
+                                snapshot.getRef().child("rating").setValue(String.valueOf(ans));
+                                // snapshot.getRef().child("state").setValue("yes");
+                            }
 
-                                  }
-                              });
-                             snapshot.getRef().child("rating").setValue(rt.getRating());
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                        snapshot.getRef().child("rating").setValue(String.valueOf(rt.getRating()));
 
 
                     }

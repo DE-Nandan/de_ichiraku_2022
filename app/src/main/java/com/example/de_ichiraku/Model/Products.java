@@ -1,7 +1,7 @@
 package com.example.de_ichiraku.Model;
 
 public class Products {
-    private String pname, description, price, img, category, pid, date, time;
+    private String pname, description, price, img, category, pid, date, time,rating;
 
     public Products() {
 
@@ -16,6 +16,7 @@ public class Products {
         this.pid = pid;
         this.date = date;
         this.time = time;
+        this.rating=rating;
     }
 
     public String getPname() {
@@ -80,5 +81,13 @@ public class Products {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 }

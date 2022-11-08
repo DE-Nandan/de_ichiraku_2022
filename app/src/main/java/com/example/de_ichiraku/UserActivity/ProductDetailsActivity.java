@@ -39,7 +39,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private Button feedRate;
     private ImageView productImage;
     private ElegantNumberButton numberButton;
-    private TextView productPrice,productDescription,productName;
+    private TextView productPrice,productDescription,productName,productRating;
     private String productID = "" , state = "Normal";
 
     @Override
@@ -58,6 +58,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productName = (TextView) findViewById(R.id.product_name_details);
         productDescription = (TextView) findViewById(R.id.product_desc_details);
         productPrice = (TextView) findViewById(R.id.product_price_details);
+        productRating = (TextView) findViewById(R.id.product_rating);
         productImage = (ImageView) findViewById(R.id.product_image_details);
 
 
@@ -115,6 +116,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartMap.put("quantity",numberButton.getNumber());
         cartMap.put("discount",productID);
 
+
         cartListRef.child("User View").child(Prevalent.currentOnlineUsers.getPhone()).child("Products")
         .child(productID).updateChildren(cartMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -156,6 +158,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 if(snapshot.exists())
                 {
                     Products products = snapshot.getValue(Products.class);
+//
+//                    if(snapshot.child("rating").exists())
+//                    productRating.setText(snapshot.child("rating").getValue().toString());
+//                    else
+//                        productRating.setText("0");
 
                     productName.setText(products.getPname());
                     productDescription.setText(products.getDescription());
