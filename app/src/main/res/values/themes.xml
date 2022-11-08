@@ -21,6 +21,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/LightGrey</item>
+        <item name="colorControlActivated">@color/Crimson</item>
+    </style>
+
     <style name="Theme.De_ichiraku.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.De_ichiraku.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

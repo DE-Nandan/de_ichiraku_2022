@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +35,8 @@ import java.util.HashMap;
 public class ProductDetailsActivity extends AppCompatActivity {
 
     private Button addToCartBtn;
+    RatingBar rt;
+    private Button feedRate;
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView productPrice,productDescription,productName;
@@ -44,7 +50,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productID = getIntent().getStringExtra("pid");
 
 
+
+
         addToCartBtn = (Button) findViewById(R.id.normalAddBtn);
+        feedRate = (Button) findViewById(R.id.feedback);
         numberButton = (ElegantNumberButton) findViewById(R.id.number_btn);
         productName = (TextView) findViewById(R.id.product_name_details);
         productDescription = (TextView) findViewById(R.id.product_desc_details);
@@ -65,6 +74,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
                  {
                      addingToCartList();
                  }
+             }
+         });
+         feedRate.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+               Intent intent = new Intent(ProductDetailsActivity.this,FeedbackActivity.class);
+               startActivity(intent);
              }
          });
     }
