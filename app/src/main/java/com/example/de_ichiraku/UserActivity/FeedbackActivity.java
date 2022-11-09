@@ -11,6 +11,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class FeedbackActivity extends AppCompatActivity {
     String prodID;
     int size;
     Double prevR;
+    EditText fb_msg,fb_sub,fb_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,11 @@ public class FeedbackActivity extends AppCompatActivity {
         //Use for changing the color of RatingBar
         stars.getDrawable(2).setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
 
+
+        fb_name = (EditText)findViewById(R.id.fb_name);
+        fb_sub = (EditText)findViewById(R.id.fb_subject);
+        fb_msg = (EditText)findViewById(R.id.fb_msg);
+
         DatabaseReference prodRef = FirebaseDatabase.getInstance().getReference().child("Products").child(prodID);
         DatabaseReference ratProdRef = prodRef.child("userR").child(Prevalent.currentOnlineUsers.getPhone());
         DatabaseReference userRef = prodRef.child("userR");
@@ -58,7 +65,9 @@ public class FeedbackActivity extends AppCompatActivity {
 
         HashMap <String,Object> rat = new HashMap<>();
         rat.put("rating","0");
-        rat.put("state","no");
+        rat.put("name"," ");
+        rat.put("Subject"," ");
+        rat.put("Feedback"," ");
 
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -154,6 +163,9 @@ public class FeedbackActivity extends AppCompatActivity {
                             }
                         });
                         snapshot.getRef().child("rating").setValue(String.valueOf(rt.getRating()));
+                        snapshot.getRef().child("name").setValue(String.valueOf(fb_name.getText().toString()));
+                        snapshot.getRef().child("Feedback").setValue(String.valueOf(fb_msg.getText().toString()));
+                        snapshot.getRef().child("Subject").setValue(String.valueOf(fb_sub.getText().toString()));
 
 
                     }
