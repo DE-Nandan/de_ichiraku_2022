@@ -4,8 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    android:background="@drawable/phbg"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/t1"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edittext_rounded_corners"
+        android:ems="10"
+        android:hint="Enter Mobile"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ccp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.676" />
 
     <com.hbb20.CountryCodePicker
         android:id="@+id/ccp"
@@ -17,36 +35,43 @@
         app:layout_constraintHorizontal_bias="0.73"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
-
-    <EditText
-        android:id="@+id/t1"
-        android:layout_width="200dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        android:hint="Enter Mobile"
-        android:inputType="textPersonName"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginRight="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ccp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
+        app:layout_constraintVertical_bias="0.673" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/b1"
         android:layout_width="171dp"
         android:layout_height="50dp"
+        android:backgroundTint="@color/Silver"
         android:text="Get OTP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455"
 
-        />
+        app:layout_constraintVertical_bias="0.801" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="227dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="68dp"
+        android:text="Get Started!"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.646"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="173dp"
+        android:layout_height="211dp"
+        android:src="@drawable/ringing"
+        app:layout_constraintBottom_toTopOf="@+id/t1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
