@@ -25,7 +25,7 @@ import com.hbb20.CountryCodePicker;
 
 import io.paperdb.Paper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     CountryCodePicker ccp;
     EditText t1;
     Button b1;
