@@ -76,6 +76,7 @@ public class Explore extends AppCompatActivity {
                        holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
                         holder.txtProductPrice.setText( model.getPrice());
+                        holder.txtRating.setText("Rating: "+model.getRating()+"/5");
 
                        // Toast.makeText(Explore.this, model.getImage().toString(), Toast.LENGTH_LONG).show();
                      //   Log.d("imer",model.getImage());

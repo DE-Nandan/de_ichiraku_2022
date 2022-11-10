@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/border_image.xml" value="0.14895833333333333" />
+        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/border_txt.xml" value="0.1609375" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/edittext_rounded_corners.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_add_user.xml" value="0.4" />
@@ -31,7 +32,7 @@
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/fragment_home.xml" value="0.176" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/nav_header_home.xml" value="0.264" />
-        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/orders_layout.xml" value="0.176" />
+        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/orders_layout.xml" value="0.264" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/product_items_layout.xml" value="0.4" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/menu/activity_home_drawer.xml" value="0.24512820512820513" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/menu/home.xml" value="0.16" />

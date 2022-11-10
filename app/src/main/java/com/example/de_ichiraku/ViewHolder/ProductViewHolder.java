@@ -14,7 +14,7 @@ import com.example.de_ichiraku.R;
 
 public class ProductViewHolder extends androidx.recyclerview.widget.RecyclerView.ViewHolder implements View.OnClickListener
 {
-    public TextView txtProductName, txtProductDescription, txtProductPrice;
+    public TextView txtProductName, txtProductDescription, txtProductPrice,txtRating;
     public ImageView imageView;
     public ItemClickListener listener;
 
@@ -29,6 +29,7 @@ public class ProductViewHolder extends androidx.recyclerview.widget.RecyclerView
         txtProductName = (TextView) itemView.findViewById(R.id.product_name);
         txtProductDescription = (TextView) itemView.findViewById(R.id.product_description);
         txtProductPrice = (TextView) itemView.findViewById(R.id.product_price);
+        txtRating = (TextView) itemView.findViewById(R.id.pro_rat);
 
 
     }
