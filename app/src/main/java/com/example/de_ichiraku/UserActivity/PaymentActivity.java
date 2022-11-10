@@ -41,7 +41,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         setContentView(R.layout.activity_payment);
 
         payBtn = (Button) findViewById(R.id.payBtn);
-        txtRes = (TextView) findViewById(R.id.txtRes);
+        //txtRes = (TextView) findViewById(R.id.txtRes);
 
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override

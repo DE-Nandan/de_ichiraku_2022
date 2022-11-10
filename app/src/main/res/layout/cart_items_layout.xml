@@ -29,17 +29,19 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginLeft="5dp"
-            android:text="ProductName"
+            android:layout_marginRight="20dp"
+            android:gravity="end"
+
+            android:text="Product Quantity"
             android:textColor="@color/white"
             android:textSize="14dp">
 
         </TextView>
 
         <TextView
+            android:id="@+id/cart_prodct_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/cart_prodct_price"
             android:layout_below="@id/cart_product_name"
             android:layout_marginLeft="5dp"
             android:gravity="center"

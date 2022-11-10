@@ -8,22 +8,24 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/Crimson"
+        android:layout_width="416dp"
+        android:layout_height="74dp"
+        android:background="@drawable/border_txt2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
 
 
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/total_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/total_price"
             android:layout_marginTop="10dp"
             android:text="Price : "
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -39,8 +41,10 @@
         android:layout_height="232dp"
         app:layout_constraintBottom_toTopOf="@+id/next_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.083" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next_btn"
@@ -48,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:background="@color/Crimson"
-
+        android:textColor="@color/white"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

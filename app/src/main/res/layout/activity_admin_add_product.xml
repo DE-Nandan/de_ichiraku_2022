@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/hm5"
     tools:context=".AdminActivity.AdminAddProduct">
 
     <ImageView
         android:id="@+id/prodImage"
+        android:background="@drawable/border_image"
         android:layout_width="210dp"
         android:layout_height="204dp"
         app:layout_constraintBottom_toTopOf="@+id/prodName"
@@ -24,6 +26,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="24dp"
         android:hint="Enter Product Name"
+        android:background="@drawable/border_txt"
         app:layout_constraintBottom_toTopOf="@+id/productDes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"
@@ -35,6 +38,7 @@
         android:layout_height="55dp"
         android:layout_marginBottom="28dp"
         android:hint="Enter Product Description"
+        android:background="@drawable/border_txt"
         app:layout_constraintBottom_toTopOf="@+id/prodPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.534"
@@ -45,10 +49,11 @@
         android:layout_width="161dp"
         android:layout_height="61dp"
         android:layout_marginBottom="136dp"
+        android:background="@drawable/border_txt"
         android:hint="Enter Price"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -58,6 +63,8 @@
         android:text="Add Product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prodPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/prodPrice"
+        app:layout_constraintVertical_bias="0.483" />
 </androidx.constraintlayout.widget.ConstraintLayout>

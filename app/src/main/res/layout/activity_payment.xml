@@ -4,27 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserActivity.PaymentActivity">
+    tools:context=".UserActivity.PaymentActivity"
+    android:background="@drawable/hm5"
+    >
 
     <Button
         android:id="@+id/payBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_marginBottom="164dp"
+        android:text="Pay Now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRes" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/txtRes"
-        android:layout_width="253dp"
-        android:layout_height="124dp"
-        android:text="TextView"
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="346dp"
+        android:layout_height="265dp"
+        android:src="@drawable/pay2"
         app:layout_constraintBottom_toTopOf="@+id/payBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

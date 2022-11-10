@@ -96,15 +96,15 @@ public class CartActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull Cart model) {
 
-                holder.txtProductQunatity.setText(model.getQuantity());
-                holder.txtProductPrice.setText(model.getPrice());
+                holder.txtProductQunatity.setText(model.getQuantity()+" units");
+                holder.txtProductPrice.setText("₹"+model.getPrice()+" each");
                 holder.txtProductname.setText(model.getPname());
 
                 int oneTypeProductPrice = ((Integer.valueOf(model.getPrice())))*Integer.valueOf(model.getQuantity());
 
                 overTotalPrice = overTotalPrice+oneTypeProductPrice;
 
-                txtTotalAmount.setText("Total Price =  "+ String.valueOf(overTotalPrice));
+                txtTotalAmount.setText("Total Price = ₹ "+ String.valueOf(overTotalPrice));
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
