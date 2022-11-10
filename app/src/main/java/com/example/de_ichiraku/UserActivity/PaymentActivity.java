@@ -34,6 +34,9 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
     private static final String TAG = PaymentActivity.class.getSimpleName();
     Button payBtn;
     TextView txtRes;
+    String totalP;
+    Double totalPD;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,11 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
 
         payBtn = (Button) findViewById(R.id.payBtn);
         //txtRes = (TextView) findViewById(R.id.txtRes);
+
+        totalP = getIntent().getStringExtra("TotalAmt");
+        totalPD = Double.valueOf(totalP)*100;
+        totalP = String.valueOf(totalPD);
+
 
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +71,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         /**
          * Set your logo here
          */
-        checkout.setImage(R.drawable.flag_andorra);
+        checkout.setImage(R.drawable.shuri);
 
         /**
          * Reference to current activity
@@ -76,17 +84,17 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         try {
             JSONObject options = new JSONObject();
 
-            options.put("name", "Merchant Name");
+            options.put("name", "DE-ICHIRAKU");
             options.put("description", "Reference No. #123456");
             // options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg");
             // options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
             // options.put("theme.color", "#3399cc");
             options.put("currency", "INR");
-            options.put("amount", "500");//pass amount in currency subunits
+            options.put("amount", totalP);//pass amount in currency subunits
 
             JSONObject prefill = new JSONObject();
-            prefill.put("prefill.email", " ");
-            prefill.put("prefill.contact"," ");
+            prefill.put("prefill.email"," ");
+            prefill.put("prefill.contact",getIntent().getStringExtra("PhoneN"));
             options.put("prefill",prefill);
 
 //            JSONObject retryObj = new JSONObject();

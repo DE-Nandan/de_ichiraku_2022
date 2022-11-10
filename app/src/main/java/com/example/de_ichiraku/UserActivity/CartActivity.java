@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private Button NextProcessBtn;
     private TextView txtTotalAmount , txtMsg1;
+    private ImageView empC2;
 
     private int overTotalPrice = 0;
 
@@ -49,22 +51,20 @@ public class CartActivity extends AppCompatActivity {
           recyclerView.setHasFixedSize(true);
           layoutManager = new LinearLayoutManager(this);
           recyclerView.setLayoutManager((layoutManager));
+        empC2  =(ImageView) findViewById(R.id.emp_cart2);
+          empC2.setVisibility(View.GONE);
 
 
           NextProcessBtn = (Button) findViewById(R.id.next_btn);
+        checkNS();
 
           txtTotalAmount = (TextView) findViewById(R.id.total_price);
         txtMsg1 = (TextView) findViewById(R.id.msg1);
 
 
+
+
           NextProcessBtn.setOnClickListener(new View.OnClickListener() {
-
-
-
-
-
-
-
               @Override
               public void onClick(View v) {
 
@@ -75,6 +75,29 @@ public class CartActivity extends AppCompatActivity {
               }
           });
 
+    }
+
+    private void checkNS() {
+        final DatabaseReference itemPresRef = FirebaseDatabase.getInstance().getReference().child("Cart List").child("User View").child(Prevalent.currentOnlineUsers.getPhone());
+        itemPresRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                {
+
+                }
+                else
+                {
+                    empC2.setVisibility(View.VISIBLE);
+                    NextProcessBtn.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override

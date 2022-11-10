@@ -41,6 +41,10 @@ public class CompleteFinalOrderActivity extends AppCompatActivity {
         addressEditText = (EditText) findViewById(R.id.shipment_address);
         cityEditText = (EditText) findViewById(R.id.shipment_city);
 
+
+
+
+
         confirmOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +74,8 @@ public class CompleteFinalOrderActivity extends AppCompatActivity {
         {
             conFirmOrder();
             Intent intent = new Intent(CompleteFinalOrderActivity.this,PaymentActivity.class);
+            intent.putExtra("TotalAmt",totalAmount);
+            intent.putExtra("PhoneN",phoneEditText.toString());
             startActivity(intent);
         }
     }

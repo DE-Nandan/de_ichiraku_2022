@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/hm5"
     tools:context=".UserActivity.CartActivity">
 
     <RelativeLayout
@@ -71,6 +72,16 @@
         android:visibility="gone"
 
         />
+
+    <ImageView
+        android:id="@+id/emp_cart2"
+        android:layout_width="359dp"
+        android:layout_height="369dp"
+        app:layout_constraintBottom_toTopOf="@+id/next_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:srcCompat="@drawable/cart2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

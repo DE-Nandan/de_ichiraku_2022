@@ -26,6 +26,7 @@ import com.example.de_ichiraku.databinding.ActivityHomeBinding;
 
 import io.paperdb.Paper;
 
+// This is a NavDrawer Activity Created by Android studio
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -38,12 +39,14 @@ public class HomeActivity extends AppCompatActivity {
 
         Paper.init(this);
 
-        //1
+        //getting layout details in binding Object
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        //2
+        //setting content view
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarHome.toolbar);
+
+        //Floating action button usage
         binding.appBarHome.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,9 +67,11 @@ public class HomeActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         navigationView.getMenu().findItem(R.id.nav_gallery).setOnMenuItemClickListener(menuItem ->{
-            Toast.makeText(this, "Chillllllll", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
+            //On logging out Paper destroys the Android memory so when we again open the app it is empty so no longer direct access to Home Activity
             Paper.book().destroy();
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+            //Finishing previous Activity stack so that on back press can't go there
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
@@ -77,10 +82,9 @@ public class HomeActivity extends AppCompatActivity {
         TextView userNameTextView = headerView.findViewById(R.id.userProfileName);
         ImageView profileImageView = headerView.findViewById(R.id.profilePic);
         String UserName = Paper.book().read(Prevalent.UserName);
-//        if(!TextUtils.isEmpty(UserName))
-//        userNameTextView.setText(UserName);
-//        else
-            userNameTextView.setText(Prevalent.currentOnlineUsers.getName());
+
+        //Setting up name in Drawer Window
+        userNameTextView.setText(Prevalent.currentOnlineUsers.getName());
 
 
 
@@ -93,7 +97,7 @@ public class HomeActivity extends AppCompatActivity {
 //    }
 
 
-
+//Here We are making sure if back is pressed on Home Activity it terminates the App
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -106,7 +110,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-
+// All functions below generated in NavDrawer Activity template
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -27,6 +27,9 @@ import io.paperdb.Paper;
 
 public class AddUser extends AppCompatActivity {
 
+    /*
+    * This Activity is basically used to store user name and to check whether he/she is admin or buyer
+    * */
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     String phn = user.getPhoneNumber().toString();
@@ -55,7 +58,9 @@ public class AddUser extends AppCompatActivity {
         Paper.init(this);
 
         Log.d("namecheck ",t3.getText().toString());
-//        Users a = new Users(nm, "87878787878");
+
+    //NOT FOR INFO JUST KEPT HERE FOR DEBUGGING PURPOSES
+        //        Users a = new Users(nm, "87878787878");
 //        System.out.println(nm);
 
 //        btnP.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +73,8 @@ public class AddUser extends AppCompatActivity {
 
 
 
-       b3.setOnClickListener(new View.OnClickListener() {
+       //When Button is clicked but before that some logic is written after this listener which is making the whole process correct
+        b3.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                String nm = t3.getText().toString();
@@ -79,6 +85,7 @@ public class AddUser extends AppCompatActivity {
 
 
 
+               // If checkbox is checked then writing data to android memory
                if(chkBoxRemMe.isChecked())
                {
                    Paper.book().write(Prevalent.UserPhoneKey,phn);
@@ -112,8 +119,10 @@ public class AddUser extends AppCompatActivity {
            }
        });
 
+       //Initially not visible
        isUser.setVisibility(View.INVISIBLE);
 
+       //Making Admin button invisible and changing parentDBName to Admins
        isAdmin.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -125,6 +134,7 @@ public class AddUser extends AppCompatActivity {
            }
        });
 
+        //Making User button invisible and changing parentDBName to Users
        isUser.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {

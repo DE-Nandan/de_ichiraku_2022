@@ -44,6 +44,8 @@ public class ManageOtp extends AppCompatActivity {
         loadingBar.setMessage("Checking credentials");
         loadingBar.setCanceledOnTouchOutside(false);
         mAuth = FirebaseAuth.getInstance();
+        // If it is the same device where OTP is being sent then this function will run and proceed to next activity otherwise
+        // it sets otpid var using the function given below
         initiateotp();
 
         b2.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +58,9 @@ public class ManageOtp extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Invalid",Toast.LENGTH_LONG).show();
                 else
                 {
+                    //Creating PhoneAuth object which will be passes to checker function
                     PhoneAuthCredential credential = PhoneAuthProvider.getCredential(otpid,t2.getText().toString());
+                    //Checker function takes the object
                     signInWithPhoneAuthCredential(credential);
                 }
             }
@@ -74,23 +78,27 @@ public class ManageOtp extends AppCompatActivity {
                     @Override
                     public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                         otpid = s;
+                        //This function gets invoked when the OTP is sent is to another device i.e not the device in which the app is running
 
                     }
 
                     @Override
                     public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
 
-                       signInWithPhoneAuthCredential(phoneAuthCredential);
+                       //We come here when we are ending OTP  on same device
+                        signInWithPhoneAuthCredential(phoneAuthCredential);
                     }
 
                     @Override
                     public void onVerificationFailed(@NonNull FirebaseException e) {
 
+                       // In case of failure this gets invoked
                         Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
                     }
                 });
     }
 
+    //Checker functions which initiates in both cases whether same device or different device
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
        loadingBar.show();
         mAuth.signInWithCredential(credential)

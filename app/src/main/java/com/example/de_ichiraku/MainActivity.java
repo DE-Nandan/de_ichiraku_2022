@@ -48,12 +48,18 @@ public class MainActivity extends AppCompatActivity  {
         loadingBar.setMessage("Loading...");
         loadingBar.setCanceledOnTouchOutside(false);
 
+        /*
+        * Basically Paper is used to check data int the memory of android
+        * if there is some memory then we use that for different functionalities
+        * here we are using it for "Remember me function for Login"
+        * */
         Paper.init(this);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ManageOtp.class);
+                //taking number from Main Activity Class to Manage Activity class as it would be required for further Authentication process
                 intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ",""));
                 startActivity(intent);
             }
@@ -68,30 +74,26 @@ public class MainActivity extends AppCompatActivity  {
 
         String UserPhoneKey = Paper.book().read(Prevalent.UserPhoneKey);
         String UserName = Paper.book().read(Prevalent.UserName);
-//        if(user == null)
-//        {
-//            Toast.makeText(this, "kl", Toast.LENGTH_SHORT).show();
-//        }
+
 
         if(UserPhoneKey != "" && UserName != "")
         {
+            // checking if android memory contains some data and if it is there directing the user to Home Page
             if(!TextUtils.isEmpty(UserPhoneKey) && !TextUtils.isEmpty(UserName))
             {
                 loadingBar.show();
                 user = FirebaseAuth.getInstance().getCurrentUser();
-//                if(user != null)
-//                {
-//                    Toast.makeText(this, user.getUid(), Toast.LENGTH_SHORT).show();
-//                }
+//
                 ref = FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid());
                 //Toast.makeText(this, user.getUid(), Toast.LENGTH_SHORT).show();
                 ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        // Firstly storing data of snapshot in User class and then assigning it to an object of User
                         Users a= snapshot.getValue(Users.class);
-                     //   Toast.makeText(MainActivity.this , a.getName(), Toast.LENGTH_SHORT).show();
+                        // Setting up Prevalent user data as the data fetched from firebase database
                         Prevalent.currentOnlineUsers =a;
-                      //  Toast.makeText(MainActivity.this , Prevalent.currentOnlineUsers.getPhone(), Toast.LENGTH_SHORT).show();
+
 
                         startActivity(new Intent(MainActivity.this, HomeActivity.class));
                     }
