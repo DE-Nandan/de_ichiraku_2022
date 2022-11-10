@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/border_image.xml" value="0.14895833333333333" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/edittext_rounded_corners.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_add_user.xml" value="0.4" />
@@ -19,10 +20,11 @@
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_manage_otp.xml" value="0.4" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_payment.xml" value="0.176" />
-        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_product_details.xml" value="0.176" />
+        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_product_details.xml" value="0.264" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/app_bar_home.xml" value="0.176" />
+        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/border_image.xml" value="0.1328125" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/cart_items_layout.xml" value="0.1" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/content_home.xml" value="0.2" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
@@ -30,7 +32,7 @@
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/nav_header_home.xml" value="0.264" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/orders_layout.xml" value="0.176" />
-        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/product_items_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/product_items_layout.xml" value="0.4" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/menu/activity_home_drawer.xml" value="0.24512820512820513" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/menu/home.xml" value="0.16" />
       </map>
