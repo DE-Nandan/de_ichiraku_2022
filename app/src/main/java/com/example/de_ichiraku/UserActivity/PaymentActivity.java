@@ -108,8 +108,10 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
     public void onPaymentSuccess(String s) {
         cartClean();
         Toast.makeText(this, "Success "+s, Toast.LENGTH_SHORT).show();
-
+        Intent intent = new Intent(PaymentActivity.this,HomeActivity.class);
+        startActivity(intent);
     }
+
 
     private void cartClean() {
         FirebaseDatabase.getInstance().getReference().child("Cart List")
@@ -135,7 +137,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists())
                 {
-                    snapshot.getRef().child("state").setValue("shipped");
+                    snapshot.getRef().child("state").setValue("not shipped");
 
                 }
             }
@@ -145,8 +147,6 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
 
             }
         });
-        Intent intent = new Intent(PaymentActivity.this,HomeActivity.class);
-
 
     }
 
@@ -157,6 +157,8 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
 
 
         Toast.makeText(this, "Error "+s, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(PaymentActivity.this,HomeActivity.class);
+        startActivity(intent);
     }
 
     private void failOrder() {
@@ -177,7 +179,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
 
             }
         });
-        Intent intent = new Intent(PaymentActivity.this,HomeActivity.class);
+      //  Intent intent = new Intent(PaymentActivity.this,HomeActivity.class);
 
     }
 
