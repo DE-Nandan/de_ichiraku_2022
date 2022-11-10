@@ -4,45 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/hm5"
     tools:context=".ui.home.HomeFragment">
-<!--<androidx.recyclerview.widget.RecyclerView-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:id="@+id/recycler_menu"-->
-<!--    >-->
+    <!--<androidx.recyclerview.widget.RecyclerView-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:id="@+id/recycler_menu"-->
+    <!--    >-->
 
-<!--</androidx.recyclerview.widget.RecyclerView>-->
+    <!--</androidx.recyclerview.widget.RecyclerView>-->
 
     <Button
         android:id="@+id/btntoact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="572dp"
         android:text="Explore!"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="295dp"
-        android:layout_height="301dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/hung"
+        android:id="@+id/imageView5"
+        android:layout_width="328dp"
+        android:layout_height="316dp"
+        android:src="@drawable/hung2"
+        app:layout_constraintBottom_toTopOf="@+id/gifImageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:src="@drawable/hingtxt"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="145dp"
+        android:layout_height="118dp"
+        android:src="@drawable/explore"
         app:layout_constraintBottom_toTopOf="@+id/btntoact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.681" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
