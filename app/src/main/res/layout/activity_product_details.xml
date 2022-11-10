@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserActivity.ProductDetailsActivity"
     android:background="@drawable/hm5"
-    >
+    tools:context=".UserActivity.ProductDetailsActivity">
 
     <ImageView
         android:id="@+id/product_image_details"
@@ -50,30 +49,14 @@
         android:layout_height="53dp"
         android:layout_marginBottom="112dp"
         android:text="Product Details"
-        android:textSize="18sp"
         android:textColor="@color/IndianRed"
+        android:textSize="18sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_name_details"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/product_price_details"
-        android:layout_width="188dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="32dp"
-        android:text="Product Price"
-        android:textSize="20sp"
-        android:textColor="@color/IndianRed"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.233"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_desc_details"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -130,5 +113,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/sym"
+        android:layout_width="188dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="28dp"
+        android:text="₹"
+        android:textColor="@color/IndianRed"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/product_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_desc_details"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/product_price_details"
+        android:layout_width="188dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="32dp"
+        android:text="Product Price"
+        android:textColor="@color/IndianRed"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_desc_details"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

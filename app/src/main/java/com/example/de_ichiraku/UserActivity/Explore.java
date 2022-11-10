@@ -75,7 +75,7 @@ public class Explore extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model) {
                        holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText( model.getPrice());
+                        holder.txtProductPrice.setText("₹ "+ model.getPrice());
                         holder.txtRating.setText("Rating: "+model.getRating()+"/5");
 
                        // Toast.makeText(Explore.this, model.getImage().toString(), Toast.LENGTH_LONG).show();
