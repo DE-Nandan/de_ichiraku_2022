@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14895833333333333" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/border_image.xml" value="0.14895833333333333" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/border_txt.xml" value="0.1609375" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/border_txt2.xml" value="0.1609375" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/edittext_rounded_corners.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/ic_menu_camera.xml" value="0.14895833333333333" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_add_user.xml" value="0.4" />
         <entry key="..\:/Users/Nandan/AndroidStudioProjects/de_ichiraku/app/src/main/res/layout/activity_admin_add_product.xml" value="0.2" />

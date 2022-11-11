@@ -51,6 +51,9 @@ public class Explore extends AppCompatActivity {
             }
         });
 
+        /* Initializing for Recycler view
+           & setting up layout manager
+        */
         recyclerView = findViewById(R.id.recycler_menu2);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -64,7 +67,13 @@ public class Explore extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-                FirebaseRecyclerOptions<Products> options =
+
+        /*
+        *  Firebase Recycler view Data Fetching
+        * */
+
+        // Here options has been created which is basically fetching data from ProductRef node of database and storing it in Products Class
+        FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
                 .setQuery(ProductRef,Products.class)
                 .build();
@@ -73,14 +82,19 @@ public class Explore extends AppCompatActivity {
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder> (options) {
                     @Override
                     protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model) {
-                       holder.txtProductName.setText(model.getPname());
+                        /* This function takes the model object and puts it data into holder which
+                        represents view of a Recycler View
+                        * */
+                        holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
                         holder.txtProductPrice.setText("₹ "+ model.getPrice());
                         holder.txtRating.setText("Rating: "+model.getRating()+"/5");
 
                        // Toast.makeText(Explore.this, model.getImage().toString(), Toast.LENGTH_LONG).show();
                      //   Log.d("imer",model.getImage());
-                       Picasso.get().load(model.getImg()).into(holder.imageView);
+
+                        // Picasso takes url of Image from firebase and fetches the image in holder Image view Component
+                        Picasso.get().load(model.getImg()).into(holder.imageView);
 
                        holder.itemView.setOnClickListener(new View.OnClickListener() {
                            @Override
@@ -96,6 +110,11 @@ public class Explore extends AppCompatActivity {
                     @NonNull
                     @Override
                     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                        /*
+                        * Here we choose the layout file which we want to
+                        * use in our Recycler view for repeating new elements
+                        * */
+
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items_layout, parent,false);
                         ProductViewHolder holder = new ProductViewHolder(view);
                         return holder;

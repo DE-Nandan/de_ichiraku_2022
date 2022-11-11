@@ -69,10 +69,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
              public void onClick(View v) {
                  if(state.equals("Order Placed") || state.equals("Order Shipped"))
                  {
+                     // We come here if we have previously ordered and our product have not been shipped
+
                      Toast.makeText(ProductDetailsActivity.this, "you can add once your prev order gets completed", Toast.LENGTH_SHORT).show();
                  }
                  else
                  {
+                     // If our previous order is shipped or we have not made any order then this condition runs
                      addingToCartList();
                  }
              }
@@ -152,6 +155,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private void getProductDetails(String productID) {
         DatabaseReference productRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
+        //Fetching Details from database to show on ProdDet Activity
         productRef.child(productID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -181,6 +185,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     private  void CheckOrderState()
     {
+        //Cehcking order state
         DatabaseReference orderRef;
         orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUsers.getPhone());
         orderRef.addValueEventListener(new ValueEventListener() {
